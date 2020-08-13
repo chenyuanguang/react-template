@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import c from 'classnames';
 import style from './index.module.css';
 const packages = require('~/package.json');
@@ -29,6 +30,17 @@ class Index extends Component {
                         <li>样式全局配置与局部配置</li>
                         <li>react-hooks使用模板</li>
                         <li>基于react-hooks自定义hooks实现局部的数据通讯</li>
+                    </ul>
+                </section>
+                <section className={style.section}>
+                    <h4>案例展示</h4>
+                    <ul>
+                        <li>
+                            <Link to="/redux-demo">redux使用案例</Link>
+                        </li>
+                        <li>
+                            <Link to="/hooks-demo">hooks使用案例</Link>
+                        </li>
                     </ul>
                 </section>
                 <section className={c(style.section, style.packages)}>

@@ -6,13 +6,19 @@ export default () => {
         <footer className={styles.footer}>
             <ul>
                 <li>
-                    <a href="https://github.com/chenyuanguang/react-template/tree/react-family-meals">
+                    <a
+                        href="https://github.com/chenyuanguang/react-template/tree/react-family-meals"
+                        target="black"
+                    >
                         github
                     </a>
                 </li>
                 <li></li>
                 <li>
-                    <a href="https://github.com/chenyuanguang/blend-cli">
+                    <a
+                        href="https://github.com/chenyuanguang/blend-cli"
+                        target="black"
+                    >
                         blend-cli
                     </a>
                 </li>
