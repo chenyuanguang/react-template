@@ -1,6 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {
+    useState,
+    useEffect,
+    useRef,
+    useMemo,
+    useCallback,
+} from 'react';
 import { connect } from 'react-redux';
 import style from './index.module.less';
+import ContextStore from '@components/ContextStore';
 
 const HooksDemo = () => {
     const [num, setnum] = useState(1);
@@ -24,6 +31,14 @@ const HooksDemo = () => {
         // 依赖time计算分钟
         setmin(Math.floor(sec / 3));
     }, [sec]);
+
+    // 依赖min自动计算小时
+    const hour = useMemo(() => Math.floor(min / 3), [min]);
+
+    const [result, setresult] = useState(0);
+    const changeReducer = useCallback(() => {
+        setresult(min);
+    }, [hour]);
     return (
         <div className={style.app}>
             <h3>hooks示例</h3>
@@ -51,6 +66,32 @@ const HooksDemo = () => {
                         <span>{min}m</span>
                     </li>
                 </ul>
+            </section>
+            <section className={style.section}>
+                <h4>useMemo（自动依赖某些字段计算结果）</h4>
+                <ul>
+                    <li>
+                        <label htmlFor="">小时</label>
+                        <span>{hour}h</span>
+                    </li>
+                </ul>
+            </section>
+            <section className={style.section}>
+                <h4>useCallback（当hour改变时重新定义函数）</h4>
+                <ul>
+                    <li>
+                        <label htmlFor="">useCallback结果</label>
+                        <span>{result}</span>
+                        <button onClick={changeReducer}>点击</button>
+                    </li>
+                </ul>
+            </section>
+            <section className={style.section}>
+                <h4>
+                    useContext & useReducer
+                    自定义Hooks实现局部store（多人开发避免redux过重问题）
+                </h4>
+                <ContextStore />
             </section>
         </div>
     );

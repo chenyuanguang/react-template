@@ -3,11 +3,14 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import c from 'classnames';
 import style from './index.module.css';
+import useLocales from '@locales';
 const packages = require('~/package.json');
+
 console.log(packages);
 class Index extends Component {
     constructor(props) {
         super(props);
+        console.log(props);
         this.state = {
             tec: packages,
         };
@@ -40,6 +43,9 @@ class Index extends Component {
                         </li>
                         <li>
                             <Link to="/hooks-demo">hooks使用案例</Link>
+                        </li>
+                        <li>
+                            <Link to="/ts-demo">ts使用案例</Link>
                         </li>
                     </ul>
                 </section>
@@ -86,4 +92,8 @@ class Index extends Component {
     }
 }
 
-export default connect((state) => state)(Index);
+export default connect((state) => {
+    // 获取多语言使用
+    const [__, local] = useLocales();
+    return { ...state, __, local };
+})(Index);

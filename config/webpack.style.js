@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-10 18:55:14
- * @LastEditTime: 2020-08-13 19:55:12
+ * @LastEditTime: 2020-08-17 18:23:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /react-router-redux-auto/config/webpack.style.js
@@ -17,6 +17,7 @@ const createCssType = () => {
                     test: /\.less$/,
                     use: [
                         miniCssExtractPlugin.loader,
+                        '@teamsupercell/typings-for-css-modules-loader',
                         {
                             loader: 'css-loader',
                             options: { url: false },
@@ -35,6 +36,7 @@ const createCssType = () => {
                     test: /\.scss$/,
                     use: [
                         miniCssExtractPlugin.loader,
+                        '@teamsupercell/typings-for-css-modules-loader',
                         {
                             loader: 'css-loader',
                             options: { url: false },

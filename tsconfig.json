@@ -40,7 +40,8 @@
             "~Assets": ["./src/assets"],
             "~Assets/*": ["./src/assets/*"],
             "~/*": ["./src/*"]
-        }
+        },
+        "typeRoots": ["./types/"]
     },
     "include": ["src"]
 }

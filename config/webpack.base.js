@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-11 12:05:12
- * @LastEditTime: 2020-08-12 16:56:43
+ * @LastEditTime: 2020-08-17 18:38:25
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /react-router-redux-auto/config/webpack.base.js
@@ -9,6 +9,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 const config = require('./config');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -18,7 +19,7 @@ deviceHtml();
 
 const eslintTest = [
     {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|tsx)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
         include: [path.resolve(__dirname, '../src')], // 指定检查的目录,
@@ -38,7 +39,7 @@ module.exports = {
             ...(config.esLint.esLintUse ? eslintTest : []),
             ...require('./webpack.style.js'),
             {
-                test: /\.js|.jsx$/,
+                test: /\.js|.jsx|.tsx$/,
                 use: ['babel-loader'],
             },
 
@@ -67,7 +68,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.css'],
+        extensions: ['.js', '.jsx', '.tsx', '.css'],
         alias: config.base.aliases,
     },
     plugins: [
@@ -92,5 +93,7 @@ module.exports = {
         new miniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css',
         }),
+        // 忽略d.ts文件
+        new webpack.WatchIgnorePlugin([/css\.d\.ts$/]),
     ],
 };
