@@ -13,9 +13,6 @@
         "@babel/preset-typescript" // 让babel支持ts（使用babel代替ts-loader）
     ],
     "plugins": [
-        // "@babel/plugin-transform-runtime",
-        // "syntax-dynamic-import",
-        // "transform-object-rest-spread",
         "transform-react-jsx",
         [
             "import",
