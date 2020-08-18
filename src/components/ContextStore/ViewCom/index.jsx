@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { DemoContext } from '../store';
-export default () => {
+
+export default function ViewCom() {
     const [state] = useContext(DemoContext);
     return (
         <li>
@@ -10,4 +11,4 @@ export default () => {
             <span>{state.age}</span>
         </li>
     );
-};
+}

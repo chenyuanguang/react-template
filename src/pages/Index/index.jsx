@@ -2,20 +2,26 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import c from 'classnames';
-import style from './index.module.css';
 import useLocales from '@locales';
-const packages = require('~/package.json');
+import style from './index.module.css';
 
-console.log(packages);
 class Index extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
+
         this.state = {
-            tec: packages,
+            tec: null,
         };
     }
+
+    componentDidMount() {
+        import('~/package.json').then((data) => {
+            this.setState({ tec: data });
+        });
+    }
+
     render() {
+        const { tec } = this.state;
         return (
             <div className={style.index}>
                 <h2 className={style.title}>React 全家桶</h2>
@@ -52,11 +58,11 @@ class Index extends Component {
                 <section className={c(style.section, style.packages)}>
                     <h4>核心依赖</h4>
                     <ul>
-                        {Object.entries(packages?.dependencies || {}).map(
+                        {Object.entries(tec?.dependencies || {}).map(
                             (i, index) => {
                                 console.log(i);
                                 return (
-                                    <li key={index}>
+                                    <li key={i[0]}>
                                         <span>{i[0]}</span>
                                         <i>{i[1]}</i>
                                     </li>
@@ -74,11 +80,11 @@ class Index extends Component {
                 >
                     <h4>开发依赖</h4>
                     <ul>
-                        {Object.entries(packages?.devDependencies || {}).map(
+                        {Object.entries(tec?.devDependencies || {}).map(
                             (i, index) => {
                                 console.log(i);
                                 return (
-                                    <li key={index}>
+                                    <li key={i[0]}>
                                         <span>{i[0]}</span>
                                         <i>{i[1]}</i>
                                     </li>
@@ -94,6 +100,6 @@ class Index extends Component {
 
 export default connect((state) => {
     // 获取多语言使用
-    const [__, local] = useLocales();
-    return { ...state, __, local };
+    const [$$, local] = useLocales();
+    return { ...state, $$, local };
 })(Index);

@@ -5,11 +5,15 @@ import Footer from '@components/Footer';
 class App extends Component {
     constructor(props) {
         super(props);
+        this.state = {};
     }
+
     render() {
+        const { children } = this.props;
         return (
             <div className="app">
-                {this.props.children}
+                {children}
+
                 <Footer />
             </div>
         );

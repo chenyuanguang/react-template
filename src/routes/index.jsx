@@ -5,6 +5,7 @@ import Index from '@pages/Index';
 import ReduxDemo from '@pages/ReduxDemo';
 import HooksDemo from '@pages/HooksDemo';
 import TsDemo from '@pages/TsDemo';
+
 function RouterConfig() {
     return (
         <Router>

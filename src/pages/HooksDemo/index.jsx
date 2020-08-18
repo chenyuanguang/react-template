@@ -6,13 +6,13 @@ import React, {
     useCallback,
 } from 'react';
 import { connect } from 'react-redux';
-import style from './index.module.less';
 import ContextStore from '@components/ContextStore';
+import style from './index.module.less';
 
 const HooksDemo = () => {
     const [num, setnum] = useState(1);
 
-    let reft = useRef(1);
+    const reft = useRef(1);
     const [sec, setsec] = useState(reft.current);
     useEffect(() => {
         // 执行一次
@@ -38,7 +38,7 @@ const HooksDemo = () => {
     const [result, setresult] = useState(0);
     const changeReducer = useCallback(() => {
         setresult(min);
-    }, [hour]);
+    }, hour);
     return (
         <div className={style.app}>
             <h3>hooks示例</h3>
@@ -46,9 +46,9 @@ const HooksDemo = () => {
                 <h4>useState</h4>
                 <ul>
                     <li>
-                        <label htmlFor="">数值</label>
-                        <span>{num}</span>
-                        <button onClick={() => setnum(num + 1)}>
+                        <label htmlFor="num">数值</label>
+                        <span id="num">{num}</span>
+                        <button type="button" onClick={() => setnum(num + 1)}>
                             点击更新数值
                         </button>
                     </li>
@@ -82,7 +82,9 @@ const HooksDemo = () => {
                     <li>
                         <label htmlFor="">useCallback结果</label>
                         <span>{result}</span>
-                        <button onClick={changeReducer}>点击</button>
+                        <button type="button" onClick={changeReducer}>
+                            点击
+                        </button>
                     </li>
                 </ul>
             </section>

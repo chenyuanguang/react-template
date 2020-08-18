@@ -1,7 +1,7 @@
 /*
  * @Author: chenyuanguang
  * @Date: 2020-08-11 11:18:44
- * @LastEditTime: 2020-08-17 18:45:43
+ * @LastEditTime: 2020-08-18 11:33:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /react-router-redux-auto/.babelrc.js
@@ -10,7 +10,7 @@
     "presets": [
         "@babel/env",
         "@babel/react",
-        "@babel/preset-typescript" // 让babel支持ts
+        "@babel/preset-typescript" // 让babel支持ts（使用babel代替ts-loader）
     ],
     "plugins": [
         // "@babel/plugin-transform-runtime",

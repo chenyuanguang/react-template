@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './index.module.less';
 
-export default () => {
+export default function Footer() {
     return (
         <footer className={styles.footer}>
             <ul>
@@ -13,7 +13,7 @@ export default () => {
                         github
                     </a>
                 </li>
-                <li></li>
+                <li />
                 <li>
                     <a
                         href="https://github.com/chenyuanguang/blend-cli"
@@ -25,4 +25,4 @@ export default () => {
             </ul>
         </footer>
     );
-};
+}

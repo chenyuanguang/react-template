@@ -8,12 +8,12 @@
  */
 import { ADDNUM } from './type';
 
-let initState = {
+const initState = {
     num: 0,
 };
 
 export default (state = initState, actions) => {
-    let { type } = actions;
+    const { type } = actions;
     switch (type) {
         case ADDNUM:
             return { ...state, ...{ num: state.num + 1 } };

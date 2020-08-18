@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import style from './index.module.css';
 import Cnum from '@components/cnum';
-console.log(style);
-class Index extends Component {
+import style from './index.module.css';
+
+class Index extends PureComponent {
     render() {
+        const { props } = this;
+        const { num } = this.props;
         return (
             <div className={style.index}>
-                <section>显示redux中数据：{this.props.num}</section>
-                <Cnum {...this.props} />
+                <section>
+                    显示redux中数据：
+                    {num}
+                </section>
+                <Cnum {...props} />
             </div>
         );
     }

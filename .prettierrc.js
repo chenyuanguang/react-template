@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-04-21 14:44:06
- * @LastEditTime: 2020-08-10 18:17:17
+ * @LastEditTime: 2020-08-18 11:52:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /liebao/liehu/health_web/.prettierrc.js

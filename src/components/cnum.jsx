@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { actions, ADDNUM } from '../redux';
-export default class Cnum extends Component {
+
+export default class Cnum extends PureComponent {
     handle() {
-        this.props.dispatch(actions[ADDNUM]());
+        const { dispatch } = this.props;
+        dispatch(actions[ADDNUM]());
     }
+
     render() {
         return (
             <div>
-                <button onClick={this.handle.bind(this)}>
+                <button type="button" onClick={this.handle.bind(this)}>
                     累加redux的num值
                 </button>
             </div>

@@ -9,7 +9,7 @@
 import React, { useReducer } from 'react';
 
 export const initFilterState = {
-    num: 0, //显示数据
+    num: 0, // 显示数据
 };
 
 const reducer = (state, action) => {

@@ -8,6 +8,7 @@
  */
 import en from './en.json';
 import zh from './zh.json';
+
 export default () => {
     const search = window.location.href.match(/hl=\w+/);
     const type = search && search[0]?.split('=')[1];

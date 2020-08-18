@@ -2,4 +2,6 @@
 /logs/**/*
 /node_modules/**/*
 /src/assets/**/*
-/src-wx-app/**/*
+/scripts/**/*
+\.eslintrc.js
+/config/**/*
