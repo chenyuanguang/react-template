@@ -1,9 +1,8 @@
 {
     "editor.rulers": [80, 150],
     "editor.formatOnSave": true,
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "editor.insertSpaces": true,
-
     "editor.codeActionsOnSave": {
         "source.fixAll": true
     },

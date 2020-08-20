@@ -1,12 +1,6 @@
 declare namespace IndexModuleLessNamespace {
     export interface IIndexModuleLess {
-        file: string;
-        mappings: string;
-        names: string;
-        sources: string;
-        sourcesContent: string;
         ul: string;
-        version: string;
     }
 }
 

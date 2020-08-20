@@ -8,7 +8,7 @@ import React, {
 import { connect } from 'react-redux';
 import ContextStore from '@components/ContextStore';
 import style from './index.module.less';
-
+let a = 1;
 const HooksDemo = () => {
     const [num, setnum] = useState(1);
 
