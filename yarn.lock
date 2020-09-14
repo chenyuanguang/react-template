@@ -7555,6 +7555,11 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+rmnm-cli@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/rmnm-cli/-/rmnm-cli-1.0.2.tgz#4208b4c34077861c0d40afbc082c78edaf7056e0"
+  integrity sha512-eyPPxNmbUvqwTVv+akgunjXYe1DoO0AThvRg/fio6UpghfyeHKGksbaOWIoqZsMpyGx6GjlmdBuTh9xApMoFQw==
+
 run-async@^2.2.0, run-async@^2.4.0:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.4.1.tgz#8440eccf99ea3e70bd409d49aab88e10c189a455"
